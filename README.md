@@ -2,4 +2,4 @@
 
 ## Scope
 
-<img src="public/images/AddForm.jpg">
+![Homepage](public/images/Home.jpg)
