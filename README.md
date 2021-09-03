@@ -2,4 +2,4 @@
 
 ## Scope
 
-![](public/images/AddForm.jpg)
+<img src="public/images/AddForm.jpg">
