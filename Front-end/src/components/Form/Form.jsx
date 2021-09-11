@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 
-
+import useStyles from './styles';
 
 //Following the template add textfield, buttons and props with typography   * note to self need file transfer ability for pics
 
@@ -18,11 +18,13 @@ const Form = () => {
 
   }
 
+const classes = useStyles();
+
 
   return (
-    <Paper>
-      <form on onSubmit={handleSubmit}>
-        <Typography>Showcase</Typography>
+    <Paper className={classes.paper}>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <Typography>Submit Form</Typography>
         <TextField 
           name="author"
           variant="standard"
@@ -58,7 +60,7 @@ const Form = () => {
           value={postInfo.selectedFile}
           onChange={(e) => setPostInfo({ selectedFile: e.target.value })}
           />
-          <Button variant="contained" color="primary">Submit</Button>
+          <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" fullWidth>Submit</Button>
       </form>
     </Paper>
   )

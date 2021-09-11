@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getPosts } from './actions/posts';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
+import useStyles from './styles';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,13 @@ const App = () => {
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
+
+  const classes = useStyles();
   
   return (
     <Container maxWidth="lg">
-      <AppBar position="static" color="inherit">
-        <Typography variant="h4" align="center">Nathan's Book</Typography>
+      <AppBar className={classes.AppBar} position="static" color="inherit">
+        <Typography className={classes.header} variant="h4" align="center">Nathan's Book</Typography>
       </AppBar>
       <Grow in>
         <Container>
