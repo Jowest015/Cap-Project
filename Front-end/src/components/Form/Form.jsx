@@ -6,15 +6,17 @@ import { TextField, Button, Typography, Paper } from '@material-ui/core';
 //Following the template add textfield, buttons and props with typography   * note to self need file transfer ability for pics
 
 const Form = () => {
-  const [postInfo, setPostInfo] = useState({author:'', title:'', message:'', tags:'', selectedFile:''})
+  const [postInfo, setPostInfo] = useState({
+    author:'',
+    title:'',
+    message:'',
+    tags:'',
+    selectedFile:''
+  });
 
   const handleSubmit = () => {
 
   }
-
-
-
-
 
 
   return (
@@ -56,7 +58,7 @@ const Form = () => {
           value={postInfo.selectedFile}
           onChange={(e) => setPostInfo({ selectedFile: e.target.value })}
           />
-          <Button></Button>
+          <Button variant="contained" color="primary">Submit</Button>
       </form>
     </Paper>
   )
