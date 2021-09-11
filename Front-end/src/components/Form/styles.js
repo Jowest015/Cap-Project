@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
   },
   form: {
     display: "flex",
@@ -10,6 +10,11 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
   },
   buttonSubmit: {
-    marginBottom: 10,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  textfield: {
+    margin: 1,
+
   },
 }));

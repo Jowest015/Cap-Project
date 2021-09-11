@@ -28,37 +28,39 @@ const Form = () => {
       <form className={classes.form} onSubmit={handleSubmit}>
         <Typography variant="h6">Submit Form</Typography>
         <TextField 
+          className={classes.textfield}
           name="author"
           variant="outlined"
-          label="author"
+          label="Author"
           value={postInfo.author}
           onChange={(e) => setPostInfo({ author: e.target.value })}
           />
-          <TextField 
+          <TextField
+          className={classes.textfield}
           name="title"
           variant="outlined"
-          label="title"
+          label="Title"
           value={postInfo.title}
           onChange={(e) => setPostInfo({ title: e.target.value })}
           />
-          <TextField 
+          <TextField           className={classes.textfield}
           name="message"
           variant="outlined"
-          label="message"
+          label="Message"
           value={postInfo.message}
           onChange={(e) => setPostInfo({ message: e.target.value })}
           />
-          <TextField 
+          <TextField           className={classes.textfield}
           name="tags"
           variant="outlined"
-          label="tags"
+          label="Tags"
           value={postInfo.tags}
           onChange={(e) => setPostInfo({ tags: e.target.value })}
           />
-          <TextField 
+          <TextField           className={classes.textfield}
           name="selectedFile"
           variant="outlined"
-          label="selectedFile"
+          label="Selected File"
           value={postInfo.selectedFile}
           onChange={(e) => setPostInfo({ selectedFile: e.target.value })}
           />
@@ -72,7 +74,6 @@ const Form = () => {
           <Button
           variant="contained"
           color="secondary"
-          className={classes.button}
           startIcon={<DeleteIcon />}
           size="large"
           fullWidth>Delete</Button>

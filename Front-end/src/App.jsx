@@ -18,8 +18,11 @@ const App = () => {
   
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.AppBar} position="static" color="inherit">
-        <Typography className={classes.header} variant="h4" align="center">Nathan's Book</Typography>
+      <AppBar 
+      className={classes.AppBar}
+      position="static"
+      color="primary">
+        <Typography className={classes.header} variant="h3" align="center">Nathan's Book</Typography>
       </AppBar>
       <Grow in>
         <Container>
