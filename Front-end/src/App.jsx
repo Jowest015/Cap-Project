@@ -16,11 +16,11 @@ const App = () => {
   return (
     <Container maxWidth="lg">
       <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">Nathan's Book</Typography>
+        <Typography variant="h4" align="center">Nathan's Book</Typography>
       </AppBar>
       <Grow in>
         <Container>
-          <Grid container justifyContent="space-between" alignItems="stretch" spacing='3'>
+          <Grid container justifyContent="space-between" alignItems="stretch">
             <Grid item xs={12} sm={7}>
               <Posts />
             </Grid>
