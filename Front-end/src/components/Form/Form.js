@@ -49,9 +49,9 @@ const Form = ({ currentId, setCurrentId}) => {
 
 
   return (
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} elevation={0}>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <Typography variant="h6">Submit Form</Typography>
+        <Typography variant="h5">Submit Form</Typography>
         <TextField 
           className={classes.textfield}
           name="author"
@@ -91,7 +91,6 @@ const Form = ({ currentId, setCurrentId}) => {
           fullWidth
           onChange={(e) => setPostInfo({ ...postInfo, tags: e.target.value })}
           />
-
 
           <div className={classes.fileUpload}>
             <FileBase

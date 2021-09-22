@@ -15,12 +15,10 @@ export const getPosts = async (req, res) => {
   }
 }
 
-
-
 export const createPost = async (req, res) => {
-  const post = req.body;
+  const { title, message, author, selectedFile, tags } = req.body;
 
-  const newPost = new PostMessage(post);
+  const newPost = new PostMessage({ title, message, author, selectedFile, tags });
 
   try {
     await newPost.save();
@@ -44,4 +42,26 @@ export const updatePost = async (req, res) => {
   res.json(updatedPost);
 }
 
+export const deletePost = async(req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("Post with that id not found");
+
+  await PostMessage.findByIdAndDelete(id);
+
+  res.json({ message: 'Delete Successful'});
+}
+
+export const postLikes = async(req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("Post with that id not found");
+
+  const post = await PostMessage.findById(id);
+  const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1}, {new: true})
+
+  res.json(updatedPost);
+}
 export default router;
