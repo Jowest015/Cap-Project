@@ -22,7 +22,7 @@ const App = () => {
       <AppBar 
       className={classes.appBar}
       position="static"
-      color="primary">
+      color="inherit">
         <Typography className={classes.header} variant="h3" align="center">Nathan's Book</Typography>
       </AppBar>
       <Grow in>

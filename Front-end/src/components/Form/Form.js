@@ -51,7 +51,7 @@ const Form = ({ currentId, setCurrentId}) => {
   return (
     <Paper className={classes.paper} elevation={0}>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <Typography variant="h5">Submit Form</Typography>
+        <Typography variant="h5">{currentId ? 'Edit' : 'Submit'} Form</Typography>
         <TextField 
           className={classes.textfield}
           name="author"
@@ -102,7 +102,7 @@ const Form = ({ currentId, setCurrentId}) => {
 
           <Button 
           className={classes.buttonSubmit}
-          variant="contained"
+          variant="outlined"
           color="primary"
           type="submit"
           startIcon={<CloudUploadIcon />}
@@ -111,7 +111,7 @@ const Form = ({ currentId, setCurrentId}) => {
           </Button>
 
           <Button
-          variant="contained"
+          variant="outlined"
           color="secondary"
           startIcon={<DeleteIcon />}
           size="large"
