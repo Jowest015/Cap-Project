@@ -23,11 +23,11 @@ const App = () => {
       className={classes.appBar}
       position="static"
       color="inherit">
-        <Typography className={classes.header} variant="h3" align="center">Nathan's Book</Typography>
+        <Typography className={classes.header} variant="h3" align="center">Book of Nathan</Typography>
       </AppBar>
       <Grow in>
         <Container>
-          <Grid container justifyContent="space-between" alignItems="stretch" spacing="2">
+          <Grid container justifyContent="space-between" alignItems="stretch" spacing={2}>
             <Grid item xs={12} sm={7}>
               <Posts setCurrentId={setCurrentId}/>
             </Grid>

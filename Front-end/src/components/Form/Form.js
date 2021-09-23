@@ -51,7 +51,7 @@ const Form = ({ currentId, setCurrentId}) => {
   return (
     <Paper className={classes.paper} elevation={0}>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <Typography variant="h5">{currentId ? 'Edit' : 'Submit'} Form</Typography>
+        <Typography variant="h5">{currentId ? 'Edit' : 'Create'} Post</Typography>
         <TextField 
           className={classes.textfield}
           name="author"
