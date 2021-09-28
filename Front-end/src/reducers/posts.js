@@ -19,4 +19,4 @@ export default (posts = [], action) => {
     default:
       return posts;
   }
-}
+};

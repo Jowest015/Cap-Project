@@ -11,9 +11,9 @@ export const getPosts = async (req, res) => {
 
     res.status(200).json(postMessages);
   } catch (error) {
-    res.status(404).json({ message: error });
+    res.status(404).json({ message: error.message });
   }
-}
+};
 
 export const createPost = async (req, res) => {
   const { title, message, author, selectedFile, tags } = req.body;
@@ -27,7 +27,7 @@ export const createPost = async (req, res) => {
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
-}
+};
 
 export const updatePost = async (req, res) => {
   const { id } = req.params;
@@ -35,12 +35,12 @@ export const updatePost = async (req, res) => {
 
   if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('Post with that id not found');
 
-  const updatedPost = { author, message, title, selectedFile, tags, _id: id };
+  const updatedPost = { title, message, author, selectedFile, tags, _id: id };
   
-  await PostMessage.findByIdAndUpdate(_id, updatedPost, { new: true });
+  await PostMessage.findByIdAndUpdate(id, updatedPost, { returnOriginal: false });
 
   res.json(updatedPost);
-}
+};
 
 export const deletePost = async(req, res) => {
   const { id } = req.params;
@@ -51,7 +51,7 @@ export const deletePost = async(req, res) => {
   await PostMessage.findByIdAndDelete(id);
 
   res.json({ message: 'Delete Successful'});
-}
+};
 
 export const postLikes = async(req, res) => {
   const { id } = req.params;
@@ -63,5 +63,5 @@ export const postLikes = async(req, res) => {
   const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1}, {new: true})
 
   res.json(updatedPost);
-}
+};
 export default router;

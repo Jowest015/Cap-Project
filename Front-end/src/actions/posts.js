@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, UPDATE, DELETE} from '../actions/actions';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, LIKE} from '../actions/actions';
 
 import * as api from '../api';
 
@@ -13,7 +13,7 @@ export const getPosts = () => async (dispatch) => {
       console.log(error);
     
   }
-}
+};
 
 export const createPost = (post) => async (dispatch) => {
   try {
@@ -23,7 +23,7 @@ export const createPost = (post) => async (dispatch) => {
   } catch (error) {
       console.log(error);
   }
-}
+};
 
 export const updatePost = (id, post) => async (dispatch) => {
   try {
@@ -33,7 +33,7 @@ export const updatePost = (id, post) => async (dispatch) => {
   } catch (error) {
       console.log(error);
   }
-}
+};
 
 export const deletePost = (id) => async (dispatch) => {
   try {
@@ -43,13 +43,13 @@ export const deletePost = (id) => async (dispatch) => {
   } catch (error) {
       console.log(error);
   }
-}
+};
 
-export const postLikes = (id, post) => async (dispatch) => {
+export const postLikes = (id) => async (dispatch) => {
   try {
     const { data } = await api.postLikes(id);
 
-    dispatch({ type: UPDATE, payload: data });
+    dispatch({ type: LIKE, payload: data });
   } catch (error) {
     console.log(error);
   }
