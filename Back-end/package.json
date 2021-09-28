@@ -1,10 +1,13 @@
 {
   "name": "back-end",
   "version": "1.0.0",
+  "homepage": "http://book-of-nathan.jowestdigital.com/",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "nodemon index.js"
   },
   "keywords": [],
